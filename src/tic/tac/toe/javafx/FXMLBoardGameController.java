@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import tic.tac.toe.javafx.TicTacToe;
 
 /**
  *
@@ -28,7 +29,10 @@ public class FXMLBoardGameController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        TicTacToe game = new TicTacToe();
+        game.start(2);
+        
+        //Here we need to create the TicTacToe
     }    
     
 }
