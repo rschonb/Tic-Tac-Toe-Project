@@ -60,23 +60,42 @@ public class TicTacToe {
     }
     
     public void start(int tempPlayers){
+        probDist = Settings.getList();
         tempA = players;
         reset();
         players = tempA;
         System.out.print("\f");
+        //THIS CLEARS THE BOARD
         players = tempPlayers;
+        if(players == 10000){
+            for(int i = 0; i < 10000; i++){
+                this.runGame();
+            }
+            saveData();
+        }
         if(players < 0 || players > 2){
             System.out.print("\f");
+            //THIS CLEARS THE BOARD
             System.out.println("Choose 1 or 2 players, or run a training program with 0.");
+            //THIS TELLS YOU WHAT TO INPUT
         } else{       
             this.runGame();
         }
     }
+    
+    public void saveData(){
+        Settings.setList(probDist);
+        
+        
+        
+    }
+    
     public void runGame(){
         turn = 1;
         turnNumber = 0;
         over = false;
         System.out.print("\f");
+        //THIS CLEARS THE BOARD
         checkOver();
         checkWinner();
     }
@@ -95,6 +114,7 @@ public class TicTacToe {
             pickSquareUser();
         }
         System.out.print("\f");
+        //THIS CLEARS THE BOARD
         attributeSquare();
         printBoard();
     }
@@ -102,6 +122,8 @@ public class TicTacToe {
     public void pickSquareUser(){
         check = false;
         while(check == false){
+            //ALL OF THIS WILL NEED TO BE CHANGED FOR USER INPUT
+            
             Scanner in = new Scanner(System.in);
             System.out.printf("Pick a space, 1-9: ");
             int i = in.nextInt();
@@ -303,6 +325,8 @@ public class TicTacToe {
     }
     
     public void printBoard(){
+        //ALL OF THIS NEEDS TO BE CHANGED VIA FXML
+        
         System.out.print("       |       |       " + "\n");
         if(one == 1){
             System.out.print("   X   ");
@@ -379,6 +403,7 @@ public class TicTacToe {
         System.out.print("       |       |       " + "\n");
     }
     
+    //THIS IS BASICALLY THE ONE RUNNING AT ALL TIMES.
     public void checkOver(){
         over = false;
         while(over == false){
@@ -456,6 +481,7 @@ public class TicTacToe {
         }
     }
     
+    /*
     public void checkWinnerFake(){
         if(winner == 0){
             System.out.println("It's a tie! Press enter to play again.");
@@ -468,6 +494,7 @@ public class TicTacToe {
             start(players);
         }
     }
+    */
     
     public void checkWinner(){
         if(winner == 0){
