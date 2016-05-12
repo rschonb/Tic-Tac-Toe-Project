@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.text.Text;
 import tic.tac.toe.javafx.Settings;
 
@@ -20,6 +21,8 @@ import tic.tac.toe.javafx.Settings;
  * @author GG_MacAir
  */
 public class FXMLBoardGameController implements Initializable {
+    private int checkedPlayers;
+    
     
     private int players;
     private boolean startYes;
@@ -107,6 +110,20 @@ public class FXMLBoardGameController implements Initializable {
     @FXML
     private Text O9;
     
+    @FXML
+    private Button startButton;
+    
+    @FXML
+    private CheckBox check2;
+    @FXML
+    private CheckBox check1;
+    
+    @FXML
+    public void startButton(ActionEvent event){
+        start(2);
+        
+        
+    }
     
     
  
