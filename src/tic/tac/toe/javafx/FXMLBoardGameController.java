@@ -91,7 +91,7 @@ public class FXMLBoardGameController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TicTacToe game = new TicTacToe();
+        TicTacToe game = new TicTacToe();
         
         
         //Here we need to create the TicTacToe
