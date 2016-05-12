@@ -460,11 +460,7 @@ public class FXMLBoardGameController implements Initializable {
     }
     
     
-    public int getTurn(){
-        return turn;
-        
     
-    }
     
     public void start(int tempPlayers){
         probDist = Settings.getList();
