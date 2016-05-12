@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tic.tac.toe.javafx.Settings;
 
 /**
  *
@@ -25,7 +26,10 @@ public class TicTacToeJavaFX extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+    @Override
+    public void stop() {
+        Settings.save();
+    }
     /**
      * @param args the command line arguments
      */
