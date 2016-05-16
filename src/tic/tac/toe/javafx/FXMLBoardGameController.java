@@ -23,6 +23,15 @@ import tic.tac.toe.javafx.Settings;
 public class FXMLBoardGameController implements Initializable {
     private int checkedPlayers = 2;
     
+    int numSelected = 0;
+    
+    
+    boolean isPicked = false;
+    
+    
+    
+    
+    
     
     private int players;
     private boolean startYes;
@@ -141,19 +150,25 @@ public class FXMLBoardGameController implements Initializable {
  
 @FXML
     public void ChangeVis1(ActionEvent event){
+        
+        
         if(X1.isVisible() == true || O1.isVisible() == true){
             return;
         }else if(turn == 1){
+            
             changeVisibilityX1();
             changeVisibilityb1();
+            one = 1;
         }else if(turn == 2){
             changeVisibilityO1();
             changeVisibilityb1();
+            one = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
+        
+        
         
     }
 @FXML
@@ -163,14 +178,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX2();
             changeVisibilityb2();
+            two = 1;
         }else if(turn == 2){
             changeVisibilityO2();
             changeVisibilityb2();
+            two = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -180,14 +196,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX3();
             changeVisibilityb3();
+            three = 1;
         }else if(turn == 2){
             changeVisibilityO3();
             changeVisibilityb3();
+            three = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -197,14 +214,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX4();
             changeVisibilityb4();
+            four = 1;
         }else if(turn == 2){
             changeVisibilityO4();
             changeVisibilityb4();
+            four = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -214,14 +232,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX5();
             changeVisibilityb5();
+            five = 1;
         }else if(turn == 2){
             changeVisibilityO5();
             changeVisibilityb5();
+            five = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -231,14 +250,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX6();
             changeVisibilityb6();
+            six = 1;
         }else if(turn == 2){
             changeVisibilityO6();
             changeVisibilityb6();
+            six = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -248,14 +268,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX7();
             changeVisibilityb7();
+            seven = 1;
         }else if(turn == 2){
             changeVisibilityO7();
             changeVisibilityb7();
+            seven = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -265,14 +286,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX8();
             changeVisibilityb8();
+            eight = 1;
         }else if(turn == 2){
             changeVisibilityO8();
             changeVisibilityb8();
+            eight = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
 @FXML
@@ -282,14 +304,15 @@ public class FXMLBoardGameController implements Initializable {
         }else if(turn == 1){
             changeVisibilityX9();
             changeVisibilityb9();
+            nine = 1;
         }else if(turn == 2){
             changeVisibilityO9();
             changeVisibilityb9();
+            nine = 2;
         }else{
             return;
         }
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        isPicked = true;
         
     }
     
@@ -326,9 +349,10 @@ public class FXMLBoardGameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TicTacToe game = new TicTacToe();
-        ConstructorTicTacToe();
+        ConstructorTicTacToe(); 
         setAllXAndOOff();
         hideButtons();
+        
         
         //Here we need to create the TicTacToe
     }    
@@ -508,7 +532,7 @@ public class FXMLBoardGameController implements Initializable {
             //THIS CLEARS THE BOARD
             
             
-            System.out.println("Choose 1 or 2 players, or run a training program with 0.");
+            
             //THIS TELLS YOU WHAT TO INPUT
         } else{       
             this.runGame();
@@ -548,8 +572,8 @@ public class FXMLBoardGameController implements Initializable {
         }
         setAllXAndOOff();
         //THIS CLEARS THE BOARD
-        attributeSquare();
-        printBoard();
+        //attributeSquare();
+        //printBoard();
     }
     
     public void pickSquareUser(){
@@ -557,10 +581,8 @@ public class FXMLBoardGameController implements Initializable {
         while(check == false){
             //ALL OF THIS WILL NEED TO BE CHANGED FOR USER INPUT
             
-            Scanner in = new Scanner(System.in);
-            System.out.printf("Pick a space, 1-9: ");
-            int i = in.nextInt();
-            square = i;
+            Thread.sleep(250);
+           
             if((square < 0) || (square > 9)){
                 check = false;
             } else if(square == 0){
@@ -569,9 +591,10 @@ public class FXMLBoardGameController implements Initializable {
             } else {
                 check = true;
             }
-            checkPicked();
+            //checkPicked();
         }
     }
+    
     public void pickSquareComp(){
         found = false;
         for(int i = 0; i < probDist.size(); i++){
@@ -607,6 +630,7 @@ public class FXMLBoardGameController implements Initializable {
             runPicker();
         }
     }
+    
     public void runPicker(){
         check = false;
         while(check == false){
@@ -641,7 +665,7 @@ public class FXMLBoardGameController implements Initializable {
                 square = 9;
             }
             check = true;
-            checkPicked();
+            //checkPicked();
             if(check == false){
                 for(int i = 0; i < probDist.size(); i++){
                     int[] tempArray = probDist.get(i);
@@ -757,6 +781,7 @@ public class FXMLBoardGameController implements Initializable {
         }
     }
     
+    
     public void printBoard(){
         //ALL OF THIS NEEDS TO BE CHANGED VIA FXML
         
@@ -836,6 +861,7 @@ public class FXMLBoardGameController implements Initializable {
         System.out.print("       |       |       " + "\n");
     }
     
+    
     //THIS IS BASICALLY THE ONE RUNNING AT ALL TIMES.
     public void checkOver(){
         over = false;
@@ -910,6 +936,82 @@ public class FXMLBoardGameController implements Initializable {
             }
             if(over == false){
                 this.runTurn();
+            }
+        }
+    }
+    public void checkOver2(){
+        over = false;
+        while(over == false){
+            if((one == 1) && (two == 1) && (three == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((four == 1) && (five == 1) && (six == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((seven == 1) && (eight == 1) && (nine == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((one == 1) && (four == 1) && (seven == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((two == 1) && (five == 1) && (eight == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((three == 1) && (six == 1) && (nine == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((one == 1) && (five == 1) && (nine == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((seven == 1) && (five == 1) && (three == 1)){
+                over = true;
+                winner = 1;
+            }
+            if((one == 2) && (two == 2) && (three == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((four == 2) && (five == 2) && (six == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((seven == 2) && (eight == 2) && (nine == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((one == 2) && (four == 2) && (seven == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((two == 2) && (five == 2) && (eight == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((three == 2) && (six == 2) && (nine == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((one == 2) && (five == 2) && (nine == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((seven == 2) && (five == 2) && (three == 2)){
+                over = true;
+                winner = 2;
+            }
+            if((turnNumber == 9)  && (winner == 0)){
+                over = true;
+                winner = 0;
+            }
+            if(over == true){
+                checkWinner();
             }
         }
     }
