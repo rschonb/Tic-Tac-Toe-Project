@@ -30,11 +30,6 @@ public class FXMLBoardGameController implements Initializable {
     
     boolean isPicked = false;
     
-    
-    
-    
-    
-    
     private int players;
     private boolean startYes;
     private int one;
@@ -159,7 +154,7 @@ public class FXMLBoardGameController implements Initializable {
             return;
         
         }else if(turn == 1){
-            square = 1;
+            
             one = 1;
             isPicked = true;
         }else if(turn == 2){
