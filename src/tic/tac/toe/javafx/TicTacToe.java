@@ -42,6 +42,8 @@ public class TicTacToe {
     private boolean done;
     int winPoint;
     
+    
+    
     public TicTacToe(){
         startYes = false;
         one = 0;
@@ -59,12 +61,14 @@ public class TicTacToe {
         turnNumber = 0;
     }
     
+    
+    
+    
     public void start(int tempPlayers){
         probDist = Settings.getList();
         tempA = players;
         reset();
         players = tempA;
-        System.out.print("\f");
         //THIS CLEARS THE BOARD
         players = tempPlayers;
         if(players == 10000){

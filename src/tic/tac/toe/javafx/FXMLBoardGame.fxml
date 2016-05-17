@@ -1,14 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLBoardGameController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLBoardGameController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="120.0" layoutX="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="200.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="100.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="200.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Text fx:id="X1" layoutX="27.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X2" layoutX="127.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X3" layoutX="227.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X4" layoutX="27.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X5" layoutX="127.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X6" layoutX="227.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X7" layoutX="27.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X8" layoutX="127.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="X9" layoutX="227.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Button fx:id="b1" layoutX="8.0" layoutY="37.0" mnemonicParsing="false" onAction="#ChangeVis1" text="ChooseMe" />
+      <Button fx:id="b2" layoutX="108.0" layoutY="36.0" mnemonicParsing="false" onAction="#ChangeVis2" text="ChooseMe" />
+      <Button fx:id="b3" layoutX="208.0" layoutY="36.0" mnemonicParsing="false" onAction="#ChangeVis3" text="ChooseMe" />
+      <Button fx:id="b4" layoutX="8.0" layoutY="137.0" mnemonicParsing="false" onAction="#ChangeVis4" text="ChooseMe" />
+      <Button fx:id="b5" layoutX="108.0" layoutY="137.0" mnemonicParsing="false" onAction="#ChangeVis5" text="ChooseMe" />
+      <Button fx:id="b6" layoutX="208.0" layoutY="137.0" mnemonicParsing="false" onAction="#ChangeVis6" text="ChooseMe" />
+      <Button fx:id="b7" layoutX="8.0" layoutY="237.0" mnemonicParsing="false" onAction="#ChangeVis7" text="ChooseMe" />
+      <Button fx:id="b8" layoutX="108.0" layoutY="237.0" mnemonicParsing="false" onAction="#ChangeVis8" text="ChooseMe" />
+      <Button fx:id="b9" layoutX="208.0" layoutY="237.0" mnemonicParsing="false" onAction="#ChangeVis9" text="ChooseMe" />
+      <Text fx:id="O1" layoutX="25.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O2" layoutX="125.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O3" layoutX="225.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O4" layoutX="25.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O5" layoutX="125.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O6" layoutX="225.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O7" layoutX="25.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O8" layoutX="125.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fx:id="O9" layoutX="225.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Text>
+      <Button fx:id="startButton" layoutX="317.0" layoutY="99.0" mnemonicParsing="false" onAction="#startButton" text="Start" />
+      <CheckBox fx:id="check2" layoutX="305.0" layoutY="14.0" mnemonicParsing="false" onAction="#TwoPlayers" text="2 players" />
+      <CheckBox fx:id="check1" layoutX="305.0" layoutY="51.0" mnemonicParsing="false" onAction="#OnePlayers" text="1 players" />
+   </children>
 </AnchorPane>
