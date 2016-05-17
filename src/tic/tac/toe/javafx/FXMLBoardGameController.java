@@ -128,46 +128,33 @@ public class FXMLBoardGameController implements Initializable {
     public void startButton(ActionEvent event){
         showButtons();
         ConstructorTicTacToe();
-        
         start(checkedPlayers);
-        
-        
     }
     
     @FXML
     public void TwoPlayers(ActionEvent event){
         checkedPlayers = 2;
-        
     }
     
     @FXML
     public void OnePlayers(ActionEvent event){
         checkedPlayers = 1;
-        
     }
  
 @FXML
     public void ChangeVis1(ActionEvent event){
-        
-        
         if(X1.isVisible() == true || O1.isVisible() == true){
-            return;
-        
+
         }else if(turn == 1){
-            
             one = 1;
             isPicked = true;
         }else if(turn == 2){
-            
             one = 2;
             isPicked = true;
         }else{
-        }
-        
-        
-        
-        
+        } 
     }
+    
 @FXML
     public void ChangeVis2(ActionEvent event){
         if(X2.isVisible() == true || O2.isVisible() == true){
@@ -348,7 +335,6 @@ public class FXMLBoardGameController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TicTacToe game = new TicTacToe();
         ConstructorTicTacToe(); 
         setAllXAndOOff();
         showButtons();
