@@ -374,7 +374,7 @@ public class FXMLBoardGameController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //TicTacToe game = new TicTacToe();
         ConstructorTicTacToe(); 
-        setAllXAndOOff();a
+        setAllXAndOOff();
         hideButtons();
         
         
