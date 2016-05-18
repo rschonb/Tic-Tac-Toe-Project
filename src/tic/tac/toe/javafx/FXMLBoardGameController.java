@@ -25,14 +25,6 @@ public class FXMLBoardGameController implements Initializable {
     
     int numSelected = 0;
     
-    
-    
-    
-    
-    
-    
-    
-    
     private int players;
     private boolean startYes;
     private int one;
@@ -600,12 +592,12 @@ public class FXMLBoardGameController implements Initializable {
         //printBoard();
     }
     
-    public void pickSquareUser() throws InterruptedException{
+    public void pickSquareUser(){
         check = false;
         while(check == false){
             //ALL OF THIS WILL NEED TO BE CHANGED FOR USER INPUT
             
-            Thread.sleep(250);
+            //Thread.sleep(250);
            
             if((square < 0) || (square > 9)){
                 check = false;
