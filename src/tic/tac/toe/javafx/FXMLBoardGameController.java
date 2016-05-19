@@ -21,6 +21,10 @@ import tic.tac.toe.javafx.Settings;
  * @author GG_MacAir
  */
 public class FXMLBoardGameController implements Initializable {
+    boolean isPicked = false;
+    
+    
+    
     private int checkedPlayers = 2;
     
     int numSelected = 0;
@@ -123,7 +127,7 @@ public class FXMLBoardGameController implements Initializable {
     public void startButton(ActionEvent event){
         ConstructorTicTacToe();
         showButtons();
-        start(checkedPlayers);
+        startTwoPlayers();
         
         
     }
@@ -131,6 +135,7 @@ public class FXMLBoardGameController implements Initializable {
     @FXML
     public void TwoPlayers(ActionEvent event){
         checkedPlayers = 2;
+        
         
     }
     
@@ -145,21 +150,19 @@ public class FXMLBoardGameController implements Initializable {
         if(X1.isVisible() == true || O1.isVisible() == true){
             return;
         }else if(turn == 1){
-            
-            changeVisibilityX1();
-            changeVisibilityb1();
+            square = 1;
+            isPicked = true;
             one = 1;
         }else if(turn == 2){
-            changeVisibilityO1();
-            changeVisibilityb1();
+            isPicked = true;
             one = 2;
-        }else{
-            return;
+            square = 1;
         }
-        checkOver();
+        
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
         
     }
@@ -168,20 +171,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X2.isVisible() == true || O2.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX2();
-            changeVisibilityb2();
+            isPicked = true;
+            square = 2;
             two = 1;
         }else if(turn == 2){
-            changeVisibilityO2();
-            changeVisibilityb2();
+            isPicked = true;
             two = 2;
-        }else{
-            return;
+            square = 2;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -189,20 +190,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X3.isVisible() == true || O3.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX3();
-            changeVisibilityb3();
+            isPicked = true;
             three = 1;
+            square = 3;
         }else if(turn == 2){
-            changeVisibilityO3();
-            changeVisibilityb3();
+            isPicked = true;
             three = 2;
-        }else{
-            return;
+            square = 3;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -210,20 +209,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X4.isVisible() == true || O4.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX4();
-            changeVisibilityb4();
+            isPicked = true;
             four = 1;
+            square = 4;
         }else if(turn == 2){
-            changeVisibilityO4();
-            changeVisibilityb4();
+            isPicked = true;
             four = 2;
-        }else{
-            return;
+            square = 4;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -231,20 +228,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X5.isVisible() == true || O5.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX5();
-            changeVisibilityb5();
+            isPicked = true;
             five = 1;
+            square = 5;
         }else if(turn == 2){
-            changeVisibilityO5();
-            changeVisibilityb5();
+            isPicked = true;
             five = 2;
-        }else{
-            return;
+            square = 5;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -252,20 +247,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X6.isVisible() == true || O6.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX6();
-            changeVisibilityb6();
+            isPicked = true;
             six = 1;
+            square = 6;
         }else if(turn == 2){
-            changeVisibilityO6();
-            changeVisibilityb6();
+            isPicked = true;
             six = 2;
-        }else{
-            return;
+            square = 6;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -273,20 +266,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X7.isVisible() == true || O7.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX7();
-            changeVisibilityb7();
+            isPicked = true;
             seven = 1;
+            square = 7;
         }else if(turn == 2){
-            changeVisibilityO7();
-            changeVisibilityb7();
+            isPicked = true;
             seven = 2;
-        }else{
-            return;
+            square = 7;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -294,20 +285,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X8.isVisible() == true || O8.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX8();
-            changeVisibilityb8();
+            isPicked = true;
             eight = 1;
+            square = 8;
         }else if(turn == 2){
-            changeVisibilityO8();
-            changeVisibilityb8();
+            isPicked = true;
             eight = 2;
-        }else{
-            return;
+            square = 8;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
 @FXML
@@ -315,20 +304,18 @@ public class FXMLBoardGameController implements Initializable {
         if(X9.isVisible() == true || O9.isVisible() == true){
             return;
         }else if(turn == 1){
-            changeVisibilityX9();
-            changeVisibilityb9();
+            isPicked = true;
             nine = 1;
+            square = 9;
         }else if(turn == 2){
-            changeVisibilityO9();
-            changeVisibilityb9();
+            isPicked = true;
             nine = 2;
-        }else{
-            return;
+            square = 9;
         }
-        checkOver();
         turnNumber++;
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
+        hasBeenPicked();
         
     }
     
@@ -526,7 +513,27 @@ public class FXMLBoardGameController implements Initializable {
         turnNumber = 0;
     }
     
+    public void hasBeenPicked(){
+        //runTurn();
+        attributeSquare();
+        checkOver2();
+        //checkWinner();
+        
+    }
     
+    public void startTwoPlayers(){
+        setAllXAndOOff();
+        showButtons();
+        ConstructorTicTacToe();
+        isPicked = false;
+        numSelected = 0;
+        turn = 1;
+        turnNumber = 0;
+        over = false;
+        
+        
+        
+    }
     
     
     public void start(int tempPlayers){
@@ -751,50 +758,88 @@ public class FXMLBoardGameController implements Initializable {
         if(turn == 1){
             if(square == 1){
                 one = 1;
+                changeVisibilityX1();
+                changeVisibilityb1();
             } else if(square == 2){
                 two = 1;
+                changeVisibilityX2();
+                changeVisibilityb2();
             } else if(square == 3){
                 three = 1;
+                changeVisibilityX3();
+                changeVisibilityb3();
             } else if(square == 4){
                 four = 1;
+                changeVisibilityX4();
+                changeVisibilityb4();
             } else if(square == 5){
                 five = 1;
+                changeVisibilityX5();
+                changeVisibilityb5();
             } else if(square == 6){
                 six = 1;
+                changeVisibilityX6();
+                changeVisibilityb6();
             } else if(square == 7){
                 seven = 1;
+                changeVisibilityX7();
+                changeVisibilityb7();
             } else if(square == 8){
                 eight = 1;
+                changeVisibilityX8();
+                changeVisibilityb8();
             } else {
                 nine = 1;
+                changeVisibilityX9();
+                changeVisibilityb9();
             }
         }
         if(turn == 2){
             if(square == 1){
                 one = 2;
+                changeVisibilityO1();
+                changeVisibilityb1();
             } else if(square == 2){
                 two = 2;
+                changeVisibilityO2();
+                changeVisibilityb2();
             } else if(square == 3){
                 three = 2;
+                changeVisibilityO3();
+                changeVisibilityb3();
             } else if(square == 4){
                 four = 2;
+                changeVisibilityO4();
+                changeVisibilityb4();
             } else if(square == 5){
                 five = 2;
+                changeVisibilityO5();
+                changeVisibilityb5();
             } else if(square == 6){
                 six = 2;
+                changeVisibilityO6();
+                changeVisibilityb6();
             } else if(square == 7){
                 seven = 2;
+                changeVisibilityO7();
+                changeVisibilityb7();
             } else if(square == 8){
                 eight = 2;
+                changeVisibilityO8();
+                changeVisibilityb8();
             } else {
                 nine = 2;
+                changeVisibilityO9();
+                changeVisibilityb9();
             }
         }
+        /*
         if(turn == 1){
             turn = 2;
         } else {
             turn = 1;
         }
+        */
     }
     
     
@@ -957,7 +1002,7 @@ public class FXMLBoardGameController implements Initializable {
     }
     public void checkOver2(){
         over = false;
-        while(over == false){
+        if(over == false){
             if((one == 1) && (two == 1) && (three == 1)){
                 over = true;
                 winner = 1;
@@ -1027,7 +1072,8 @@ public class FXMLBoardGameController implements Initializable {
                 winner = 0;
             }
             if(over == true){
-                checkWinner();
+                System.out.println("yay");
+                //checkWinner();
             }
         }
     }
@@ -1091,6 +1137,11 @@ public class FXMLBoardGameController implements Initializable {
                 System.exit(1);
             }
         }
+    }
+    
+    
+    public void displayWinner(){
+        
     }
     
     public void runCompensation(){
