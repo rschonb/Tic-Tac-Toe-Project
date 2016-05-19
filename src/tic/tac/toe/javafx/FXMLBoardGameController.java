@@ -160,8 +160,7 @@ public class FXMLBoardGameController implements Initializable {
         }
         
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        
         hasBeenPicked();
         
         
@@ -180,8 +179,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 2;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        
         hasBeenPicked();
         
     }
@@ -199,8 +197,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 3;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        
         hasBeenPicked();
         
     }
@@ -218,8 +215,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 4;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+       
         hasBeenPicked();
         
     }
@@ -237,8 +233,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 5;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+      
         hasBeenPicked();
         
     }
@@ -256,8 +251,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 6;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+       
         hasBeenPicked();
         
     }
@@ -275,8 +269,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 7;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+    
         hasBeenPicked();
         
     }
@@ -294,8 +287,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 8;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+   
         hasBeenPicked();
         
     }
@@ -313,8 +305,7 @@ public class FXMLBoardGameController implements Initializable {
             square = 9;
         }
         turnNumber++;
-        if(turn == 1){turn = 2;}
-        else if(turn == 2){turn = 1;}
+        
         hasBeenPicked();
         
     }
@@ -517,6 +508,8 @@ public class FXMLBoardGameController implements Initializable {
         //runTurn();
         attributeSquare();
         checkOver2();
+        if(turn == 1){turn = 2;}
+        else if(turn == 2){turn = 1;}
         //checkWinner();
         
     }
@@ -1073,7 +1066,7 @@ public class FXMLBoardGameController implements Initializable {
             }
             if(over == true){
                 System.out.println("yay");
-                //checkWinner();
+                displayWinner();
             }
         }
     }
@@ -1141,7 +1134,10 @@ public class FXMLBoardGameController implements Initializable {
     
     
     public void displayWinner(){
-        
+        //this means that x has won
+        if(turn == 1){
+            
+        }
     }
     
     public void runCompensation(){
