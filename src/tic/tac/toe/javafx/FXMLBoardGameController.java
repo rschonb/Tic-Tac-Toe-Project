@@ -127,7 +127,12 @@ public class FXMLBoardGameController implements Initializable {
     public void startButton(ActionEvent event){
         ConstructorTicTacToe();
         showButtons();
-        startTwoPlayers();
+        if(checkedPlayers == 2){
+            startTwoPlayers();
+        }else{
+            
+        }
+        
         
         
     }
@@ -342,13 +347,11 @@ public class FXMLBoardGameController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TicTacToe game = new TicTacToe();
+        
         ConstructorTicTacToe(); 
         setAllXAndOOff();
         hideButtons();
         
-        
-        //Here we need to create the TicTacToe
     }    
     
     public void setAllXAndOOff(){
@@ -505,12 +508,12 @@ public class FXMLBoardGameController implements Initializable {
     }
     
     public void hasBeenPicked(){
-        //runTurn();
+       
         attributeSquare();
         checkOver2();
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
-        //checkWinner();
+        
         
     }
     
@@ -915,8 +918,7 @@ public class FXMLBoardGameController implements Initializable {
         System.out.print("       |       |       " + "\n");
     }
     
-    
-    //THIS IS BASICALLY THE ONE RUNNING AT ALL TIMES.
+   
     public void checkOver(){
         over = false;
         while(over == false){
@@ -1065,26 +1067,13 @@ public class FXMLBoardGameController implements Initializable {
                 winner = 0;
             }
             if(over == true){
-                System.out.println("yay");
+                
                 displayWinner();
             }
         }
     }
     
-    /*
-    public void checkWinnerFake(){
-        if(winner == 0){
-            System.out.println("It's a tie! Press enter to play again.");
-            start(players);
-        } else if(winner == 1){
-            System.out.println("X wins! Press enter to play again.");
-            start(players);
-        } else {
-            System.out.println("O wins! Press enter to play again.");
-            start(players);
-        }
-    }
-    */
+    
     
     public void checkWinner(){
         if(winner == 0){
