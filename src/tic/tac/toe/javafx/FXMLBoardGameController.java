@@ -1131,6 +1131,8 @@ public class FXMLBoardGameController implements Initializable {
         ArrayList<Boolean> wins = Settings.getWins();
         wins.add(true);
         Settings.setWins(wins);
+        setAllXAndOOff();
+        hideButtons();
         
         
         if(win == 0){ //this means x has tied with o
