@@ -1128,6 +1128,10 @@ public class FXMLBoardGameController implements Initializable {
     
     
     public void displayWinner(){
+        ArrayList<Boolean> wins = Settings.getWins();
+        wins.add(true);
+        Settings.setWins(wins);
+        
         
         if(win == 0){ //this means x has tied with o
             textField.setText("You have tied!");
