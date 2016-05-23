@@ -27,9 +27,10 @@ import java.util.ArrayList;
  * @author dwheadon
  */
 public class Settings implements java.io.Serializable {
-    
+    private ArrayList<Boolean> wins = new ArrayList<Boolean>();
     private ArrayList<int[]> probDist = new ArrayList<int[]>();
     public transient static Settings instance;
+    
     
     
     private Settings() {}
@@ -66,6 +67,15 @@ public class Settings implements java.io.Serializable {
         instance.probDist = data;
     }
     
+    public static ArrayList<Boolean> getWins() {
+        init();
+        return instance.wins;
+    }
+    
+    public static void setWins(ArrayList<Boolean> data) {
+        init();
+        instance.wins = data;
+    }
     
     public static void save() {
         init();
