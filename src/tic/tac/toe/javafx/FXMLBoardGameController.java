@@ -58,7 +58,7 @@ public class FXMLBoardGameController implements Initializable {
     int winPoint;
     
     @FXML 
-    TextField textField;
+    TextField rMessage;
     
     @FXML
     private Button b1;
@@ -1130,11 +1130,11 @@ public class FXMLBoardGameController implements Initializable {
     public void displayWinner(){
         
         if(win == 0){ //this means x has tied with o
-            textField.setText("You have tied!");
+            rMessage.setText("You have tied!");
         } else if (win == 1){ //this means x has won
-            textField.setText("You have won!"); 
+            rMessage.setText("You have won!"); 
         } else if(win == 2){ //this means x has lost
-            textField.setText("You have lost!");
+            rMessage.setText("You have lost!");
         }
     }
     
