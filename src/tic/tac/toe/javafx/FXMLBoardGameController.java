@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import tic.tac.toe.javafx.Settings;
 
@@ -22,9 +23,7 @@ import tic.tac.toe.javafx.Settings;
  */
 public class FXMLBoardGameController implements Initializable {
     boolean isPicked = false;
-    
-    
-    
+    private int win;
     private int checkedPlayers = 2;
     
     int numSelected = 0;
@@ -57,6 +56,9 @@ public class FXMLBoardGameController implements Initializable {
     private double[] dist = new double[9];
     private boolean done;
     int winPoint;
+    
+    @FXML 
+    TextField textField;
     
     @FXML
     private Button b1;
@@ -1081,7 +1083,8 @@ public class FXMLBoardGameController implements Initializable {
                 runCompensation();
             }
             Scanner scanner = new Scanner(System.in);
-            System.out.println("It's a tie! Press enter to play again.");
+            //System.out.println("It's a tie! Press enter to play again.");
+            win = 0;
             String input = scanner.nextLine();
             if(input.equals("")){
                 tempA = players;
@@ -1095,7 +1098,8 @@ public class FXMLBoardGameController implements Initializable {
                 runCompensation();
             }
             Scanner scanner = new Scanner(System.in);
-            System.out.println("X wins! Press enter to play again.");
+            //System.out.println("X wins! Press enter to play again.");
+            win = 1;
             String input = scanner.nextLine();
             if(input.equals("")){
                 tempA = players;
@@ -1109,7 +1113,8 @@ public class FXMLBoardGameController implements Initializable {
                 runCompensation();
             }
             Scanner scanner = new Scanner(System.in);
-            System.out.println("O wins! Press enter to play again.");
+            //System.out.println("O wins! Press enter to play again.");
+            win = 2;
             String input = scanner.nextLine();
             if(input.equals("")){
                 tempA = players;
@@ -1123,9 +1128,13 @@ public class FXMLBoardGameController implements Initializable {
     
     
     public void displayWinner(){
-        //this means that x has won
-        if(turn == 1){
-            
+        
+        if(win == 0){ //this means x has tied with o
+            textField.setText("You have tied!");
+        } else if (win == 1){ //this means x has won
+            textField.setText("You have won!"); 
+        } else if(win == 2){ //this means x has lost
+            textField.setText("You have lost!");
         }
     }
     
