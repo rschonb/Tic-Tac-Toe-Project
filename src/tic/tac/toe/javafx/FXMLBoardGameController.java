@@ -58,6 +58,7 @@ public class FXMLBoardGameController implements Initializable {
     private double[] dist = new double[9];
     private boolean done;
     int winPoint;
+    int firstPlayer;
     
     int numPlayFromLastGame;
     
@@ -136,8 +137,10 @@ public class FXMLBoardGameController implements Initializable {
         showButtons();
         if(checkedPlayers == 2){
             startTwoPlayers();
-        }else{
-            
+        }else if(checkedPlayers == 1){
+            startOnePlayers();
+        } else {
+            return;
         }
         
         
@@ -152,8 +155,10 @@ public class FXMLBoardGameController implements Initializable {
         showButtons();
         if(numPlayFromLastGame == 2){
             startTwoPlayers();
-        }else{
-            
+        }else if(numPlayFromLastGame == 1){
+            startOnePlayers();
+        } else {
+            return;
         }
         
         
