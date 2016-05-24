@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -347,7 +350,14 @@ public class FXMLBoardGameController implements Initializable {
         
     }
     
-    
+    @FXML
+    public void handleShowData(ActionEvent event) {
+        try {
+            tic.tac.toe.javafx.TicTacToeJavaFX.getAppInstance().showGraphView();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }    
     public void hideButtons(){
         b1.setVisible(false);
         b2.setVisible(false);

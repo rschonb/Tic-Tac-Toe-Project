@@ -6,9 +6,12 @@ package tic.tac.toe.javafx;
  * and open the template in the editor.
  */
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -61,4 +64,13 @@ public class GraphicalRepresentationController implements Initializable {
         
     }    
     
+    
+    @FXML
+    public void handleBackToGraph() {
+        try {
+            tic.tac.toe.javafx.TicTacToeJavaFX.getAppInstance().showGraphView();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
