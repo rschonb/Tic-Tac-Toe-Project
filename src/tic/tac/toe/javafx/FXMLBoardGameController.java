@@ -11,6 +11,8 @@ import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -57,9 +59,11 @@ public class FXMLBoardGameController implements Initializable {
     private boolean done;
     int winPoint;
     
-    @FXML 
-    TextField rMessage;
+    int numPlayFromLastGame;
     
+    @FXML
+    private Button replayButton;
+
     @FXML
     private Button b1;
     @FXML
@@ -127,9 +131,26 @@ public class FXMLBoardGameController implements Initializable {
     
     @FXML
     public void startButton(ActionEvent event){
+        numPlayFromLastGame = checkedPlayers;
         ConstructorTicTacToe();
         showButtons();
         if(checkedPlayers == 2){
+            startTwoPlayers();
+        }else{
+            
+        }
+        
+        
+        
+    }
+    
+    
+    @FXML
+    public void replayButtonAction(ActionEvent event){
+        numPlayFromLastGame = checkedPlayers;
+        ConstructorTicTacToe();
+        showButtons();
+        if(numPlayFromLastGame == 2){
             startTwoPlayers();
         }else{
             
@@ -533,6 +554,19 @@ public class FXMLBoardGameController implements Initializable {
         
     }
     
+    public void startOnePlayers(){
+        setAllXAndOOff();
+        showButtons();
+        ConstructorTicTacToe();
+        isPicked = false;
+        numSelected = 0;
+        turn = 1;
+        turnNumber = 0;
+        over = false;
+        
+        
+        
+    }
     
     public void start(int tempPlayers){
         probDist = Settings.getList();
@@ -1134,19 +1168,21 @@ public class FXMLBoardGameController implements Initializable {
         setAllXAndOOff();
         hideButtons();
         Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you!");
-
-        alert.showAndWait();
+        alert.setTitle("Results");
+        alert.setHeaderText("Results Message");
         
-        if(win == 0){ //this means x has tied with o
-            rMessage.setText("You have tied!");
-        } else if (win == 1){ //this means x has won
-            rMessage.setText("You have won!"); 
-        } else if(win == 2){ //this means x has lost
-            rMessage.setText("You have lost!");
+            if(win == 0){ //this means x has tied with o
+                alert.setContentText("X and O have tied");
+                //alert.showAndWait();
+            } else if (win == 1){ //this means x has won
+                alert.setContentText("X has won");
+                //alert.showAndWait();
+            } else if(win == 2){ //this means x has lost
+                alert.setContentText("O has won");
+            
         }
+        
+        alert.showAndWait();
     }
     
     public void runCompensation(){

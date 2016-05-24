@@ -72,7 +72,7 @@ public class TicTacToe {
         //THIS CLEARS THE BOARD
         players = tempPlayers;
         if(players == 10000){
-            for(int i = 0; i < 10000; i++){
+            for(int i = 0; i < 500000; i++){
                 this.runGame();
             }
             saveData();

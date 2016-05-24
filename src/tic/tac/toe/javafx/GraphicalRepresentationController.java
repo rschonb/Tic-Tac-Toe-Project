@@ -7,7 +7,10 @@ package tic.tac.toe.javafx;
  */
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
@@ -33,15 +36,28 @@ public class GraphicalRepresentationController implements Initializable {
      * Initializes the controller class.
      */
     
-    
-    
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        int wins = 0;
+        int losses = 0;
+        ArrayList<Boolean> dataList = Settings.getWins();
+        for(boolean b : dataList){
+             if(b == true){
+                 wins++;
+             }else{
+                 losses++;
+             }
+            
+            
+        }
         
-        
-        
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                new PieChart.Data("Wins", wins),
+                new PieChart.Data("Looses", losses));
+                
+        piechart = new PieChart(pieChartData);
+
         
     }    
     

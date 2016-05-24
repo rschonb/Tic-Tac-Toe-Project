@@ -118,9 +118,11 @@
             <Font name="System Bold" size="64.0" />
          </font>
       </Text>
-      <Button fx:id="startButton" layoutX="317.0" layoutY="99.0" mnemonicParsing="false" onAction="#startButton" text="Start" />
+      <Button fx:id="startButton" layoutX="367.0" layoutY="137.0" mnemonicParsing="false" onAction="#startButton" text="Start" />
       <CheckBox fx:id="check2" layoutX="305.0" layoutY="14.0" mnemonicParsing="false" onAction="#TwoPlayers" text="2 players" />
       <CheckBox fx:id="check1" layoutX="305.0" layoutY="51.0" mnemonicParsing="false" onAction="#OnePlayers" text="1 players" />
-      <TextField fx:id="rMessage" layoutX="303.0" layoutY="150.0" prefHeight="26.0" prefWidth="123.0" />
+      <TextField fx:id="rMessage" layoutX="330.0" layoutY="187.0" prefHeight="26.0" prefWidth="123.0" />
+      <Button fx:id="replayButton" layoutX="361.0" layoutY="237.0" mnemonicParsing="false" onAction="#replayButtonAction" text="Replay" />
+      <CheckBox fx:id="check11" layoutX="305.0" layoutY="91.0" mnemonicParsing="false" onAction="#OnePlayers" text="Full Training (30 mins.)" />
    </children>
 </AnchorPane>
