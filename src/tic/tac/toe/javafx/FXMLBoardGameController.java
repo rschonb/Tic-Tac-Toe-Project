@@ -558,6 +558,19 @@ public class FXMLBoardGameController implements Initializable {
         
     }
     
+    public void startOnePlayers(){
+        setAllXAndOOff();
+        showButtons();
+        ConstructorTicTacToe();
+        isPicked = false;
+        numSelected = 0;
+        turn = 1;
+        turnNumber = 0;
+        over = false;
+        
+        
+        
+    }
     
     public void start(int tempPlayers){
         probDist = Settings.getList();
