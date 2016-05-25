@@ -20,10 +20,10 @@ import tic.tac.toe.javafx.Settings;
  */
 public class TicTacToeJavaFX extends Application {
     
-    private static tic.tac.toe.javafx.TicTacToeJavaFX appInstance;
+    private static TicTacToeJavaFX appInstance;
     private Stage mainWindow;
     
-    public static tic.tac.toe.javafx.TicTacToeJavaFX getAppInstance() {
+    public static TicTacToeJavaFX getAppInstance() {
         return appInstance;
     }
     
@@ -61,7 +61,8 @@ public class TicTacToeJavaFX extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("GraphicalRepresentation.fxml"));
         
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("graphicalrepresentation.css").toExternalForm());
+        
+        //scene.getStylesheets().add(getClass().getResource("graphicalrepresentation.css").toExternalForm());
         
         this.mainWindow.setScene(scene);
         this.mainWindow.show();        

@@ -68,9 +68,9 @@ public class GraphicalRepresentationController implements Initializable {
     @FXML
     public void handleBackToGraph() {
         try {
-            tic.tac.toe.javafx.TicTacToeJavaFX.getAppInstance().showGameView();
+            TicTacToeJavaFX.getAppInstance().showGameView();
         } catch (IOException ex) {
-            Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

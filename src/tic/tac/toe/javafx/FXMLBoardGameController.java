@@ -21,6 +21,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import tic.tac.toe.javafx.Settings;
+import tic.tac.toe.javafx.TicTacToeJavaFX;
 
 /**
  *
@@ -357,9 +358,9 @@ public class FXMLBoardGameController implements Initializable {
     @FXML
     public void handleShowData(ActionEvent event) {
         try {
-            tic.tac.toe.javafx.TicTacToeJavaFX.getAppInstance().showGraphView();
+            TicTacToeJavaFX.getAppInstance().showGraphView();
         } catch (IOException ex) {
-            Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }    
     public void hideButtons(){
