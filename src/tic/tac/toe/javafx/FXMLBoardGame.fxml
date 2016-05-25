@@ -124,5 +124,6 @@
       <TextField fx:id="rMessage" layoutX="330.0" layoutY="187.0" prefHeight="26.0" prefWidth="123.0" />
       <Button fx:id="replayButton" layoutX="361.0" layoutY="237.0" mnemonicParsing="false" onAction="#replayButtonAction" text="Replay" />
       <CheckBox fx:id="check11" layoutX="305.0" layoutY="91.0" mnemonicParsing="false" onAction="#OnePlayers" text="Full Training (30 mins.)" />
+      <Button fx:id="DataButton" layoutX="362.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleShowData" text="See Data" />
    </children>
 </AnchorPane>

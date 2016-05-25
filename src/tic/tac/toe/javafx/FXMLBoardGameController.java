@@ -138,6 +138,10 @@ public class FXMLBoardGameController implements Initializable {
     private CheckBox check1;
     
     @FXML
+    private Button DataButton;
+    
+    
+    @FXML
     public void startButton(ActionEvent event){
         numPlayFromLastGame = checkedPlayers;
         ConstructorTicTacToe();
