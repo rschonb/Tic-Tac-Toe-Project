@@ -30,6 +30,7 @@ public class FXMLBoardGameController implements Initializable {
     
     int numSelected = 0;
     
+    private int gameNum = 1;
     private int players;
     private boolean startYes;
     private int one;
@@ -151,6 +152,7 @@ public class FXMLBoardGameController implements Initializable {
     @FXML
     public void replayButtonAction(ActionEvent event){
         numPlayFromLastGame = checkedPlayers;
+        gameNum = gameNum+1;
         ConstructorTicTacToe();
         showButtons();
         if(numPlayFromLastGame == 2){
