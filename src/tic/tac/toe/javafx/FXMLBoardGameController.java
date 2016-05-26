@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +21,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import tic.tac.toe.javafx.Settings;
+import tic.tac.toe.javafx.TicTacToeJavaFX;
 
 /**
  *
@@ -130,6 +134,10 @@ public class FXMLBoardGameController implements Initializable {
     private CheckBox check2;
     @FXML
     private CheckBox check1;
+    
+    @FXML
+    private Button DataButton;
+    
     
     @FXML
     public void startButton(ActionEvent event){
@@ -345,7 +353,14 @@ public class FXMLBoardGameController implements Initializable {
         
     }
     
-    
+    @FXML
+    public void handleShowData(ActionEvent event) {
+        try {
+            TicTacToeJavaFX.getAppInstance().showGraphView();
+        } catch (IOException ex) {
+            //Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }    
     public void hideButtons(){
         b1.setVisible(false);
         b2.setVisible(false);
@@ -1171,7 +1186,7 @@ public class FXMLBoardGameController implements Initializable {
     public void displayWinner(){
         ArrayList<Boolean> wins = Settings.getWins();
         wins.add(true);
-        Settings.setWins(wins);
+        
         setAllXAndOOff();
         hideButtons();
         Alert alert = new Alert(AlertType.INFORMATION);
