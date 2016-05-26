@@ -1193,19 +1193,20 @@ public class FXMLBoardGameController implements Initializable {
         alert.setTitle("Results");
         alert.setHeaderText("Results Message");
         
-            if(win == 0){ //this means x has tied with o
+            if(winner == 0){ //this means x has tied with o
                 alert.setContentText("X and O have tied");
                 //alert.showAndWait();
-            } else if (win == 1){ //this means x has won
+            } else if (winner == 1){ //this means x has won
                 alert.setContentText("X has won");
                 wins.add(true);
                 //alert.showAndWait();
-            } else if(win == 2){ //this means x has lost
+            } else if(winner == 2){ //this means x has lost
                 alert.setContentText("O has won");
                 wins.add(false);
             
         }
         Settings.setWins(wins);
+        Settings.save();
         alert.showAndWait();
     }
     

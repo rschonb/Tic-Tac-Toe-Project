@@ -60,9 +60,15 @@ public class GraphicalRepresentationController implements Initializable {
         ObservableList<PieChart.Data> pieChartData =
                 FXCollections.observableArrayList(
                 new PieChart.Data("Wins", wins),
-                new PieChart.Data("Looses", losses));
+                new PieChart.Data("Losses", losses));
                 
         piechart = new PieChart(pieChartData);
+        
+        
+        
+        
+        
+        
 
         
     }    
