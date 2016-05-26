@@ -1185,7 +1185,7 @@ public class FXMLBoardGameController implements Initializable {
     
     public void displayWinner(){
         ArrayList<Boolean> wins = Settings.getWins();
-        wins.add(true);
+        
         
         setAllXAndOOff();
         hideButtons();
@@ -1198,12 +1198,14 @@ public class FXMLBoardGameController implements Initializable {
                 //alert.showAndWait();
             } else if (win == 1){ //this means x has won
                 alert.setContentText("X has won");
+                wins.add(true);
                 //alert.showAndWait();
             } else if(win == 2){ //this means x has lost
                 alert.setContentText("O has won");
+                wins.add(false);
             
         }
-        
+        Settings.setWins(wins);
         alert.showAndWait();
     }
     
