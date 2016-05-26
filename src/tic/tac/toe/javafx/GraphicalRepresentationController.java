@@ -32,6 +32,8 @@ public class GraphicalRepresentationController implements Initializable {
     @FXML
     private Button backButton;
     
+    @FXML
+    private Button startButton;
     
     
     
@@ -64,6 +66,32 @@ public class GraphicalRepresentationController implements Initializable {
         
     }    
     
+    
+    @FXML
+    public void showChart(){
+        int wins = 0;
+        int losses = 0;
+        ArrayList<Boolean> dataList = Settings.getWins();
+        for(boolean b : dataList){
+             if(b == true){
+                 wins++;
+             }else{
+                 losses++;
+             }
+            
+            
+        }
+        
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                new PieChart.Data("Wins", wins),
+                new PieChart.Data("Looses", losses));
+                
+        piechart = new PieChart(pieChartData);
+
+        
+        
+    }
     
     @FXML
     public void handleBackToGraph() {
