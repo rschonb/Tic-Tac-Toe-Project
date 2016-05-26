@@ -6,9 +6,12 @@ package tic.tac.toe.javafx;
  * and open the template in the editor.
  */
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -29,6 +32,8 @@ public class GraphicalRepresentationController implements Initializable {
     @FXML
     private Button backButton;
     
+    @FXML
+    private Button startButton;
     
     
     
@@ -38,6 +43,7 @@ public class GraphicalRepresentationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("hey");
         int wins = 0;
         int losses = 0;
         ArrayList<Boolean> dataList = Settings.getWins();
@@ -61,4 +67,39 @@ public class GraphicalRepresentationController implements Initializable {
         
     }    
     
+    
+    @FXML
+    public void showChart(){
+        int wins = 0;
+        int losses = 0;
+        ArrayList<Boolean> dataList = Settings.getWins();
+        for(boolean b : dataList){
+             if(b == true){
+                 wins++;
+             }else{
+                 losses++;
+             }
+            
+            
+        }
+        
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                new PieChart.Data("Wins", wins),
+                new PieChart.Data("Looses", losses));
+                
+        piechart = new PieChart(pieChartData);
+
+        
+        
+    }
+    
+    @FXML
+    public void handleBackToGraph() {
+        try {
+            TicTacToeJavaFX.getAppInstance().showGameView();
+        } catch (IOException ex) {
+            //Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
