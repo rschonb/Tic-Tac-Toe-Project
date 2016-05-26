@@ -43,6 +43,7 @@ public class GraphicalRepresentationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("hey");
         int wins = 0;
         int losses = 0;
         ArrayList<Boolean> dataList = Settings.getWins();

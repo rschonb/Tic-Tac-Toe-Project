@@ -1188,7 +1188,7 @@ public class FXMLBoardGameController implements Initializable {
     public void displayWinner(){
         ArrayList<Boolean> wins = Settings.getWins();
         wins.add(true);
-        Settings.setWins(wins);
+        
         setAllXAndOOff();
         hideButtons();
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -1196,15 +1196,19 @@ public class FXMLBoardGameController implements Initializable {
         alert.setHeaderText("Look, an Information Dialog");
         alert.setContentText("I have a great message for you!");
 
-        alert.showAndWait();
+        
         
         if(win == 0){ //this means x has tied with o
-            textField.setText("You have tied!");
+           // textField.setText("You have tied!");
         } else if (win == 1){ //this means x has won
-            textField.setText("You have won!"); 
+          //  textField.setText("You have won!"); 
+            wins.add(true);
         } else if(win == 2){ //this means x has lost
-            textField.setText("You have lost!");
+          //  textField.setText("You have lost!");
+            wins.add(false);
         }
+        Settings.setWins(wins);
+        alert.showAndWait();
     }
     
     public void runCompensation(){
