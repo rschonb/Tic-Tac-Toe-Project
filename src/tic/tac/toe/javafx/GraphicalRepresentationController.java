@@ -10,15 +10,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-
+import javafx.scene.chart.BarChart;
 /**
  * FXML Controller class
  *
@@ -27,13 +23,12 @@ import javafx.scene.control.Button;
 public class GraphicalRepresentationController implements Initializable {
 
     @FXML
-    private PieChart piechart;
+    private BarChart chart;
     
     @FXML
     private Button backButton;
     
-    @FXML
-    private Button startButton;
+    
     
     
     
@@ -47,7 +42,7 @@ public class GraphicalRepresentationController implements Initializable {
         int wins = 0;
         int losses = 0;
         ArrayList<Boolean> dataList = Settings.getWins();
-        for(boolean b : dataList){
+        for(Boolean b : dataList){
              if(b == true){
                  wins++;
              }else{
@@ -57,12 +52,13 @@ public class GraphicalRepresentationController implements Initializable {
             
         }
         
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                new PieChart.Data("Wins", wins),
-                new PieChart.Data("Losses", losses));
-                
-        piechart = new PieChart(pieChartData);
+       XYChart.Series<String, Number> Data = new XYChart.Series();
+        Data.setName("Winning Vs. Losing");
+        
+        Data.getData().add(new XYChart.Data("Wins", wins));
+        Data.getData().add(new XYChart.Data("Losses", losses));
+        
+        chart.getData().add(Data);
         
         
         
@@ -74,31 +70,6 @@ public class GraphicalRepresentationController implements Initializable {
     }    
     
     
-    @FXML
-    public void showChart(){
-        int wins = 0;
-        int losses = 0;
-        ArrayList<Boolean> dataList = Settings.getWins();
-        for(boolean b : dataList){
-             if(b == true){
-                 wins++;
-             }else{
-                 losses++;
-             }
-            
-            
-        }
-        
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                new PieChart.Data("Wins", wins),
-                new PieChart.Data("Looses", losses));
-                
-        piechart = new PieChart(pieChartData);
-
-        
-        
-    }
     
     @FXML
     public void handleBackToGraph() {

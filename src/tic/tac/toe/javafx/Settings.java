@@ -86,7 +86,7 @@ public class Settings implements java.io.Serializable {
            out.writeObject(instance);
            out.close();
            fileOut.close();
-           System.out.printf("Serialized data is saved in settings.ser");
+           System.out.println("Serialized data is saved in settings.ser");
         }catch(IOException i) {
             i.printStackTrace();
         }    
