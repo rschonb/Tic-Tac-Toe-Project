@@ -12,7 +12,7 @@
         <URL value="@graphicalrepresentation.css" />
     </stylesheets>
    <children>
-      <BarChart fx:id="chart" layoutX="34.0" layoutY="14.0" title="Winning Vs. Losing Frequencies" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BarChart fx:id="chart" layoutX="34.0" layoutY="14.0" stylesheets="@graphicalrepresentation.css" title="Winning Vs. Losing Frequencies" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

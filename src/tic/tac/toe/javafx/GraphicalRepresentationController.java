@@ -6,6 +6,9 @@ package tic.tac.toe.javafx;
  * and open the template in the editor.
  */
 
+
+
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -15,6 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.chart.BarChart;
+
+
 /**
  * FXML Controller class
  *
@@ -23,7 +28,7 @@ import javafx.scene.chart.BarChart;
 public class GraphicalRepresentationController implements Initializable {
 
     @FXML
-    private BarChart chart;
+    private BarChart<String,Number> chart;
     
     @FXML
     private Button backButton;
@@ -38,7 +43,7 @@ public class GraphicalRepresentationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("hey");
+       
         int wins = 0;
         int losses = 0;
         ArrayList<Boolean> dataList = Settings.getWins();
@@ -58,9 +63,16 @@ public class GraphicalRepresentationController implements Initializable {
         Data.getData().add(new XYChart.Data("Wins", wins));
         Data.getData().add(new XYChart.Data("Losses", losses));
         
+        
+        chart.setStyle("-fx-bar-fill: blue;");
+        chart.lookupAll(".default-color0.chart-bar")
+            .forEach(n -> n.setStyle("-fx-bar-fill: blue;"));
+        
+       
+        
         chart.getData().add(Data);
         
-        
+       
         
         
         

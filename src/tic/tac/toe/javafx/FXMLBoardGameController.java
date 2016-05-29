@@ -28,11 +28,15 @@ import tic.tac.toe.javafx.TicTacToeJavaFX;
  * @author GG_MacAir
  */
 public class FXMLBoardGameController implements Initializable {
-    boolean isPicked = false;
+    private boolean isPicked = false;
     private int win;
     private int checkedPlayers = 2;
     
-    int numSelected = 0;
+    private int numSelected = 0;
+    
+    private boolean twoPlayers = false;
+    
+    
     
     private int gameNum = 1;
     private int players;
@@ -190,6 +194,25 @@ public class FXMLBoardGameController implements Initializable {
  
 @FXML
     public void ChangeVis1(ActionEvent event){
+        if(twoPlayers == true && (X1.isVisible() == true || O1.isVisible() == true)){
+            if(turn == 1){
+                square = 1;
+                isPicked = true;
+                one = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 1;
+                isPicked = true;
+                one = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+
         if(X1.isVisible() == true || O1.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -210,6 +233,26 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis2(ActionEvent event){
+        if(twoPlayers == true && (X2.isVisible() == true || O2.isVisible() == true)){
+            if(turn == 1){
+                square = 2;
+                isPicked = true;
+                two = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 2;
+                isPicked = true;
+                two = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
+        
         if(X2.isVisible() == true || O2.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -228,6 +271,26 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis3(ActionEvent event){
+        if(twoPlayers == true && (X3.isVisible() == true || O3.isVisible() == true)){
+            if(turn == 1){
+                square = 3;
+                isPicked = true;
+                three = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 3;
+                isPicked = true;
+                three = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
+        
         if(X3.isVisible() == true || O3.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -246,6 +309,26 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis4(ActionEvent event){
+        if(twoPlayers == true && (X4.isVisible() == true || O4.isVisible() == true)){
+            if(turn == 1){
+                square = 4;
+                isPicked = true;
+                four = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 4;
+                isPicked = true;
+                four = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
+        
         if(X4.isVisible() == true || O4.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -264,6 +347,26 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis5(ActionEvent event){
+        if(twoPlayers == true && (X5.isVisible() == true || O5.isVisible() == true)){
+            if(turn == 1){
+                square = 5;
+                isPicked = true;
+                five = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 5;
+                isPicked = true;
+                five = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
+        
         if(X5.isVisible() == true || O5.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -282,6 +385,24 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis6(ActionEvent event){
+        if(twoPlayers == true && (X6.isVisible() == true || O6.isVisible() == true)){
+            if(turn == 1){
+                square = 6;
+                isPicked = true;
+                six = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 6;
+                isPicked = true;
+                six = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
         if(X6.isVisible() == true || O6.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -300,6 +421,26 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis7(ActionEvent event){
+        if(twoPlayers == true && (X7.isVisible() == true || O7.isVisible() == true)){
+            if(turn == 1){
+                square = 7;
+                isPicked = true;
+                seven = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 7;
+                isPicked = true;
+                seven = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
+        
         if(X7.isVisible() == true || O7.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -318,6 +459,25 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis8(ActionEvent event){
+        if(twoPlayers == true && (X8.isVisible() == true || O8.isVisible() == true)){
+            if(turn == 1){
+                square = 8;
+                isPicked = true;
+                eight = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 8;
+                isPicked = true;
+                eight = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
         if(X8.isVisible() == true || O8.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -336,6 +496,25 @@ public class FXMLBoardGameController implements Initializable {
     }
 @FXML
     public void ChangeVis9(ActionEvent event){
+        if(twoPlayers == true && (X9.isVisible() == true || O9.isVisible() == true)){
+            if(turn == 1){
+                square = 9;
+                isPicked = true;
+                nine = 1;
+                turnNumber++;
+        
+               hasBeenPicked();
+            }else if(turn == 2){
+                square = 9;
+                isPicked = true;
+                nine = 2;
+                turnNumber++;
+                TwoPlayersTurn();
+
+            } 
+            return;
+        }
+        
         if(X9.isVisible() == true || O9.isVisible() == true){
             return;
         }else if(turn == 1){
@@ -534,6 +713,16 @@ public class FXMLBoardGameController implements Initializable {
     
     
     
+    public void TwoPlayersTurn(){
+        pickSquareComp();
+        attributeSquare();
+        checkOver2();
+        if(turn == 1){turn = 2;}
+        else if(turn == 2){turn = 1;}
+        
+    }
+    
+    
     
     public void ConstructorTicTacToe(){
         startYes = false;
@@ -565,6 +754,7 @@ public class FXMLBoardGameController implements Initializable {
     public void startTwoPlayers(){
         setAllXAndOOff();
         showButtons();
+        twoPlayers = true;
         ConstructorTicTacToe();
         isPicked = false;
         numSelected = 0;
