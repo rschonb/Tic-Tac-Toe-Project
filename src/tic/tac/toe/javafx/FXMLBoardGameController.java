@@ -4,9 +4,13 @@
  * and open the template in the editor.
  */
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -21,6 +25,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import tic.tac.toe.javafx.Settings;
+import static tic.tac.toe.javafx.Settings.instance;
 import tic.tac.toe.javafx.TicTacToeJavaFX;
 
 /**
@@ -416,8 +421,30 @@ public class FXMLBoardGameController implements Initializable {
         ConstructorTicTacToe(); 
         setAllXAndOOff();
         hideButtons();
+        try{
+            loadData();
+        } catch(FileNotFoundException e){
+            System.out.println("file not found");
+        } catch(IOException e){
+            System.out.println("file not found");
+        }catch(ClassNotFoundException e){
+            System.out.println("file not found");
+        }
+           
         
     }    
+    
+    
+    public void loadData() throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream("t.tmp");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        List<int[]> temp = (List<int[]>) ois.readObject();
+        probDist = (ArrayList<int[]>) temp;
+        ois.close();    
+        
+        
+        
+    }
     
     public void setAllXAndOOff(){
         O1.setVisible(false);
