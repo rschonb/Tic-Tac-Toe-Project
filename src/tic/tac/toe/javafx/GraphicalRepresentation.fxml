@@ -21,5 +21,6 @@
         </yAxis>
       </BarChart>
       <Button fx:id="backButton" layoutX="482.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackToGraph" text="Back to Game" />
+      <Button fx:id="clearData" layoutX="32.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleClearData" text="Clear Data" />
    </children>
 </AnchorPane>

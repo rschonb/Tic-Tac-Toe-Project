@@ -646,6 +646,7 @@ public class FXMLBoardGameController implements Initializable {
     
     public void startOnePlayers(){
         setAllXAndOOff();
+        hideButtons();
         showButtons();
         ConstructorTicTacToe();
         isPicked = false;

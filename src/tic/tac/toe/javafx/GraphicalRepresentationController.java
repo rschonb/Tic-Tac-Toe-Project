@@ -34,7 +34,8 @@ public class GraphicalRepresentationController implements Initializable {
     private Button backButton;
     
     
-    
+    @FXML
+    private Button clearData;
     
     
     /**
@@ -90,5 +91,50 @@ public class GraphicalRepresentationController implements Initializable {
         } catch (IOException ex) {
             //Logger.getLogger(FXMLBoardGameController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    
+    @FXML
+    public void handleClearData() {
+        ArrayList<Boolean> temporary = new ArrayList<Boolean>();
+        
+        Settings.setWins(temporary);
+        
+        setGraphAgain();
+    }
+    
+    public void setGraphAgain(){
+        chart.getData().clear();
+        int wins = 0;
+        int losses = 0;
+        ArrayList<Boolean> dataList = Settings.getWins();
+        for(Boolean b : dataList){
+             if(b == true){
+                 wins++;
+             }else{
+                 losses++;
+             }
+            
+            
+        }
+        
+       XYChart.Series<String, Number> Data = new XYChart.Series();
+        Data.setName("Winning Vs. Losing");
+        
+        Data.getData().add(new XYChart.Data("Wins", wins));
+        Data.getData().add(new XYChart.Data("Losses", losses));
+        
+        
+        chart.setStyle("-fx-bar-fill: blue;");
+        chart.lookupAll(".default-color0.chart-bar")
+            .forEach(n -> n.setStyle("-fx-bar-fill: blue;"));
+        
+       
+        
+        chart.getData().add(Data);
+        
+       
+        
+        
     }
 }
