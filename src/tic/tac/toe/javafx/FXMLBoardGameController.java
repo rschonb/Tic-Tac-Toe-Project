@@ -877,79 +877,80 @@ public class FXMLBoardGameController implements Initializable {
     }
     
     public void attributeSquare(){
+        
         if(turn == 1){
-            if(square == 1){
+            if(square == 1 && X1.isVisible() == false){
                 one = 1;
                 changeVisibilityX1();
                 changeVisibilityb1();
-            } else if(square == 2){
+            } else if(square == 2 && X2.isVisible() == false){
                 two = 1;
                 changeVisibilityX2();
                 changeVisibilityb2();
-            } else if(square == 3){
+            } else if(square == 3 && X3.isVisible() == false){
                 three = 1;
                 changeVisibilityX3();
                 changeVisibilityb3();
-            } else if(square == 4){
+            } else if(square == 4 && X4.isVisible() == false){
                 four = 1;
                 changeVisibilityX4();
                 changeVisibilityb4();
-            } else if(square == 5){
+            } else if(square == 5 && X5.isVisible() == false){
                 five = 1;
                 changeVisibilityX5();
                 changeVisibilityb5();
-            } else if(square == 6){
+            } else if(square == 6 && X6.isVisible() == false){
                 six = 1;
                 changeVisibilityX6();
                 changeVisibilityb6();
-            } else if(square == 7){
+            } else if(square == 7 && X7.isVisible() == false){
                 seven = 1;
                 changeVisibilityX7();
                 changeVisibilityb7();
-            } else if(square == 8){
+            } else if(square == 8 && X8.isVisible() == false){
                 eight = 1;
                 changeVisibilityX8();
                 changeVisibilityb8();
-            } else {
+            } else if(X9.isVisible() == false){
                 nine = 1;
                 changeVisibilityX9();
                 changeVisibilityb9();
             }
         }
         if(turn == 2){
-            if(square == 1){
+            if(square == 1 && O1.isVisible() == false){
                 one = 2;
                 changeVisibilityO1();
                 changeVisibilityb1();
-            } else if(square == 2){
+            } else if(square == 2 && O2.isVisible() == false){
                 two = 2;
                 changeVisibilityO2();
                 changeVisibilityb2();
-            } else if(square == 3){
+            } else if(square == 3 && O3.isVisible() == false){
                 three = 2;
                 changeVisibilityO3();
                 changeVisibilityb3();
-            } else if(square == 4){
+            } else if(square == 4 && O4.isVisible() == false){
                 four = 2;
                 changeVisibilityO4();
                 changeVisibilityb4();
-            } else if(square == 5){
+            } else if(square == 5 && O5.isVisible() == false){
                 five = 2;
                 changeVisibilityO5();
                 changeVisibilityb5();
-            } else if(square == 6){
+            } else if(square == 6 && O6.isVisible() == false){
                 six = 2;
                 changeVisibilityO6();
                 changeVisibilityb6();
-            } else if(square == 7){
+            } else if(square == 7 && O7.isVisible() == false){
                 seven = 2;
                 changeVisibilityO7();
                 changeVisibilityb7();
-            } else if(square == 8){
+            } else if(square == 8 && O8.isVisible() == false){
                 eight = 2;
                 changeVisibilityO8();
                 changeVisibilityb8();
-            } else {
+            } else if(O9.isVisible() == false){
                 nine = 2;
                 changeVisibilityO9();
                 changeVisibilityb9();
