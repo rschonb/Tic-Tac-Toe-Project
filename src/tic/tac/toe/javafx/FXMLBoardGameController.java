@@ -617,7 +617,7 @@ public class FXMLBoardGameController implements Initializable {
         if(turn == 1){turn = 2;}
         else if(turn == 2){turn = 1;}
         
-        if(compGame == true){
+        if(compGame == true && turnNumber != 9){
             
             turnNumber++;
             TwoPlayersTurn();
