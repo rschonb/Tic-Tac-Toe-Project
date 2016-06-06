@@ -142,9 +142,9 @@ public class FXMLBoardGameController implements Initializable {
     private Button startButton;
     
     @FXML
-    private CheckBox check2;
+    private MenuItem OnePlayer;
     @FXML
-    private CheckBox check1;
+    private MenuItem TwoPlayer;
     
     @FXML
     private Button DataButton;
@@ -161,6 +161,8 @@ public class FXMLBoardGameController implements Initializable {
     @FXML
     private MenuButton ChooseDiff;
     
+    @FXML
+    private MenuButton ChoosePlayers;
     
     @FXML
     public void setEasy(ActionEvent event){
