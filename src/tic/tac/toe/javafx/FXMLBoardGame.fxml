@@ -118,17 +118,17 @@
             <Font name="System Bold" size="64.0" />
          </font>
       </Text>
-      <Button fx:id="startButton" layoutX="300.0" layoutY="87.0" mnemonicParsing="false" onAction="#startButton" prefHeight="27.0" prefWidth="74.0" text="Start" />
-      <Button fx:id="replayButton" layoutX="374.0" layoutY="87.0" mnemonicParsing="false" onAction="#replayButtonAction" prefHeight="27.0" prefWidth="79.0" text="Replay" />
-      <Button fx:id="DataButton" layoutX="337.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleShowData" text="See Data" />
-      <MenuButton fx:id="ChooseDiff" layoutX="303.0" layoutY="174.0" mnemonicParsing="false" text="Choose Difficulty">
+      <Button fx:id="startButton" layoutX="334.0" layoutY="107.0" mnemonicParsing="false" onAction="#startButton" prefHeight="27.0" prefWidth="74.0" text="Start" />
+      <Button fx:id="replayButton" layoutX="333.0" layoutY="161.0" mnemonicParsing="false" onAction="#replayButtonAction" prefHeight="27.0" prefWidth="79.0" text="Replay" />
+      <Button fx:id="DataButton" layoutX="336.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleShowData" text="See Data" />
+      <MenuButton fx:id="ChooseDiff" layoutX="300.0" layoutY="60.0" mnemonicParsing="false" text="Choose Difficulty">
         <items>
           <MenuItem fx:id="Easy" mnemonicParsing="false" onAction="#setEasy" text="Easy" />
             <MenuItem fx:id="Medium" mnemonicParsing="false" onAction="#setMedium" text="Medium" />
           <MenuItem fx:id="Hard" mnemonicParsing="false" onAction="#setHard" text="Hard" />
         </items>
       </MenuButton>
-      <MenuButton fx:id="ChoosePlayers" layoutX="306.0" layoutY="12.0" mnemonicParsing="false" text="Choose PLayers">
+      <MenuButton fx:id="ChoosePlayers" layoutX="300.0" layoutY="24.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="142.0" text="Choose Players">
         <items>
           <MenuItem fx:id="OnePlayer" mnemonicParsing="false" onAction="#OnePlayers" text="1 player" />
           <MenuItem fx:id="TwoPlayer" mnemonicParsing="false" onAction="#TwoPlayers" text="2 player" />
