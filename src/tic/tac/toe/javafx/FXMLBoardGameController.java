@@ -22,6 +22,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import tic.tac.toe.javafx.Settings;
@@ -146,6 +148,38 @@ public class FXMLBoardGameController implements Initializable {
     
     @FXML
     private Button DataButton;
+    
+    @FXML
+    private MenuItem Easy;
+    
+    @FXML
+    private MenuItem Medium;
+    
+    @FXML
+    private MenuItem Hard;
+    
+    @FXML
+    private MenuButton ChooseDiff;
+    
+    
+    @FXML
+    public void setEasy(ActionEvent event){
+        
+    }
+    
+    @FXML
+    public void setMedium(ActionEvent event){
+        
+    }
+    
+    @FXML
+    public void setHard(ActionEvent event){
+        
+    }
+    
+    
+    
+    
     
     
     @FXML
