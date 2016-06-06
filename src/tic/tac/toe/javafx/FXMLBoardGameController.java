@@ -164,17 +164,41 @@ public class FXMLBoardGameController implements Initializable {
     
     @FXML
     public void setEasy(ActionEvent event){
-        
+        try{
+            loadDataA();
+        } catch(FileNotFoundException e){
+            System.out.println("file not found");
+        } catch(IOException e){
+            System.out.println("file not found");
+        }catch(ClassNotFoundException e){
+            System.out.println("file not found");
+        }
     }
     
     @FXML
     public void setMedium(ActionEvent event){
-        
+        try{
+            loadDataB();
+        } catch(FileNotFoundException e){
+            System.out.println("file not found");
+        } catch(IOException e){
+            System.out.println("file not found");
+        }catch(ClassNotFoundException e){
+            System.out.println("file not found");
+        }
     }
     
     @FXML
     public void setHard(ActionEvent event){
-        
+        try{
+            loadData();
+        } catch(FileNotFoundException e){
+            System.out.println("file not found");
+        } catch(IOException e){
+            System.out.println("file not found");
+        }catch(ClassNotFoundException e){
+            System.out.println("file not found");
+        }
     }
     
     
@@ -471,6 +495,28 @@ public class FXMLBoardGameController implements Initializable {
     
     public void loadData() throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream("t.tmp");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        List<int[]> temp = (List<int[]>) ois.readObject();
+        probDist = (ArrayList<int[]>) temp;
+        ois.close();    
+        
+        
+        
+    }
+    
+    public void loadDataA() throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream("a.tmp");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        List<int[]> temp = (List<int[]>) ois.readObject();
+        probDist = (ArrayList<int[]>) temp;
+        ois.close();    
+        
+        
+        
+    }
+    
+    public void loadDataB() throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream("b.tmp");
         ObjectInputStream ois = new ObjectInputStream(fis);
         List<int[]> temp = (List<int[]>) ois.readObject();
         probDist = (ArrayList<int[]>) temp;
