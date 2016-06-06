@@ -579,10 +579,92 @@ public class FXMLBoardGameController implements Initializable {
         b9.setVisible(!j);
     }
     
+    public void pickSquareWin(){
+        found = false;
+        for(int i = 0; i < probDist.size(); i++){
+            int[] tempArray = probDist.get(i);
+            int tempCheckerTwo = tempArray[0];
+            int tempCheckerOne = ((100000000 * one) + (10000000 * two) + (1000000 * three) + (100000 * four) + (10000 * five) + (1000 * six) + (100 * seven) + (10 * eight) + (1 * nine));
+            id = tempCheckerOne;
+            if(tempCheckerOne == tempCheckerTwo){
+                found = true;
+                probArr = tempArray;
+                runPickerWin();
+                break;
+            }
+        }
+        if(found == false){
+            addArr[0] = id;
+            addArr[1] = 1;
+            addArr[2] = 1;
+            addArr[3] = 1;
+            addArr[4] = 1;
+            addArr[5] = 1;
+            addArr[6] = 1;
+            addArr[7] = 1;
+            addArr[8] = 1;
+            addArr[9] = 1;
+            int currId = id;
+            int[] addThis = new int[10];
+            for(int i = 0; i < 10; i++){
+                addThis[i] = addArr[i];
+            }
+            probDist.add(addThis);
+            probArr = addArr;
+            runPicker();
+        }
+    }
+    
+    public void runPickerWin(){
+        check = false;
+        while(check == false){
+            square = 1;
+            for(int i = 2; i < 10; i++){
+                if(probArr[i] > probArr[square]){
+                    square = i;
+                }
+            }
+            check = true;
+            checkPicked();
+            if(check == false){
+                for(int i = 0; i < probDist.size(); i++){
+                    int[] tempArray = probDist.get(i);
+                    int tempCheckerTwo = tempArray[0];
+                    int tempCheckerOne = ((100000000 * one) + (10000000 * two) + (1000000 * three) + (100000 * four) + (10000 * five) + (1000 * six) + (100 * seven) + (10 * eight) + (1 * nine));
+                    if(tempCheckerOne == tempCheckerTwo){
+                        int[] temp = probDist.get(i);
+                        if(square == 1){
+                            temp[1] = 0;
+                        } else if(square == 2){
+                            temp[2] = 0;
+                        } else if(square == 3){
+                            temp[3] = 0;
+                        } else if(square == 4){
+                            temp[4] = 0;
+                        } else if(square == 5){
+                            temp[5] = 0;
+                        } else if(square == 6){
+                            temp[6] = 0;
+                        } else if(square == 7){
+                            temp[7] = 0;
+                        } else if(square == 8){
+                            temp[8] = 0;
+                        } else {
+                            temp[9] = 0;
+                        }
+                        probDist.set(i, temp);
+                    }
+                }
+            }
+        }
+        results[(turnNumber - 1)][0] = id;
+        results[(turnNumber - 1)][1] = square;
+    }
+    
     
     
     public void TwoPlayersTurn(){
-        pickSquareComp();
+        pickSquareWin();
         attributeSquare();
         checkOver2();
         if(turn == 1){turn = 2;}
