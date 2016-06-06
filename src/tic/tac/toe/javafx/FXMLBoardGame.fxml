@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -120,8 +119,6 @@
          </font>
       </Text>
       <Button fx:id="startButton" layoutX="300.0" layoutY="87.0" mnemonicParsing="false" onAction="#startButton" prefHeight="27.0" prefWidth="74.0" text="Start" />
-      <CheckBox fx:id="check2" layoutX="305.0" layoutY="14.0" mnemonicParsing="false" onAction="#TwoPlayers" text="2 players" />
-      <CheckBox fx:id="check1" layoutX="305.0" layoutY="51.0" mnemonicParsing="false" onAction="#OnePlayers" text="1 players" />
       <Button fx:id="replayButton" layoutX="374.0" layoutY="87.0" mnemonicParsing="false" onAction="#replayButtonAction" prefHeight="27.0" prefWidth="79.0" text="Replay" />
       <Button fx:id="DataButton" layoutX="337.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleShowData" text="See Data" />
       <MenuButton fx:id="ChooseDiff" layoutX="303.0" layoutY="174.0" mnemonicParsing="false" text="Choose Difficulty">
@@ -129,6 +126,12 @@
           <MenuItem fx:id="Easy" mnemonicParsing="false" onAction="#setEasy" text="Easy" />
             <MenuItem fx:id="Medium" mnemonicParsing="false" onAction="#setMedium" text="Medium" />
           <MenuItem fx:id="Hard" mnemonicParsing="false" onAction="#setHard" text="Hard" />
+        </items>
+      </MenuButton>
+      <MenuButton fx:id="ChoosePlayers" layoutX="306.0" layoutY="12.0" mnemonicParsing="false" text="Choose PLayers">
+        <items>
+          <MenuItem fx:id="OnePlayer" mnemonicParsing="false" onAction="#OnePlayers" text="1 player" />
+          <MenuItem fx:id="TwoPlayer" mnemonicParsing="false" onAction="#TwoPlayers" text="2 player" />
         </items>
       </MenuButton>
    </children>
